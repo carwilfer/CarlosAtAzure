@@ -1,0 +1,32 @@
+﻿@model WebApp.Models.Amigo.CriarAmigosDoAmigoViewModels
+
+@{
+    ViewData["Title"] = "CriarAmigosDoAmigo";
+}
+
+<h4>CriarAmigosDoAmigo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CriarAmigosDoAmigo" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Amigo.Id" class="control-label">Lista de Amigos</label>
+                <select asp-for="Amigo.Id" class="form-control">
+                    @foreach (var item in ViewBag.Amigos)
+                    {
+                        <option value="@item.Id">@item.Nome</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

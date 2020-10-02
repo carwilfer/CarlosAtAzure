@@ -1,0 +1,22 @@
+﻿@model WebApp.Models.Home.PaginaInicialViewModel
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <h1>Contagem de países, estados e amigos</h1>
+
+</div>
+<div>
+    <h3 class="display-4">Quantidade de País: @Model.QuatidadeDePaises</h3>
+</div>
+<div>
+    <h3 class="display-4">Quantidade de Estados: @Model.QuantidadeDeEstados</h3>
+</div>
+<div>
+    <h3 class="display-4">Quantidade de Amigos: @Model.QuantidadeDeAmigos</h3>
+</div>
+
+

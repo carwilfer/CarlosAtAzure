@@ -1,0 +1,34 @@
+﻿@model WebApp.Models.Amigo.ListarAmigosDoAmigoViewModel
+
+@{
+    ViewData["Title"] = "DeletarAmigosDoAmigo";
+}
+
+<h1>Deletar Amigos Do Amigo</h1>
+
+<h4>Listar Amigos Do Amigo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeletarAmigosDoAmigo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @foreach (var item in ViewBag.Amigos)
+                {
+                    <div class="form-group">
+                        <label asp-for="Amigo.Nome" class="control-label">@item.Amigo.Nome</label>
+                        <span asp-validation-for="Amigo.Nome" class="text-danger"></span>
+                    </div>
+                    @Html.ActionLink("Delete", "DeleteAmigosDoAmigo", new { item.Id })}
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
